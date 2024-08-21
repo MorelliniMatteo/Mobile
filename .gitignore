@@ -13,3 +13,40 @@
 .externalNativeBuild
 .cxx
 local.properties
+# Compiled source
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Android specific files
+.gradle/
+build/
+local.properties
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Android Studio
+.gradle/
+build/
+.idea/
+*.iml
+local.properties
+.cxx/
+.externalNativeBuild/
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/misc.xml
+.idea/gradle.xml
+.idea/gradle-workspace.xml
