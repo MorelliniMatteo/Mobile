@@ -27,41 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83014bfc-81a6-4357-b94a-219fe98c4fce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/progetto/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/MyMangaList/ExampleInstrumentedTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/AccessoriesFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/AccessoriesFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/AddFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/AddFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/AlarmReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/AlarmReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/BagsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/BagsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/BottomsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/BottomsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/CardItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/CardItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/CategoryFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/CategoryFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/Database/CardItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/Database/CardItemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/Database/CardItemDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/Database/CardItemDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/Database/CardItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/Database/CardItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/DetailsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/DetailsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/FootwearFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/FootwearFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/NotificationActivityHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/NotificationActivityHome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/OutwearFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/OutwearFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/RecyclerView/CardAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/RecyclerView/CardAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/RecyclerView/CardItemDiffCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/RecyclerView/CardItemDiffCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/RecyclerView/CardViewHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/RecyclerView/CardViewHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/RecyclerView/OnItemListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/RecyclerView/OnItemListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/SettingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/SettingActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/SettingsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/SettingsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/TopsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/TopsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/Utilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/ViewModel/AddViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/ViewModel/AddViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/progetto/ViewModel/ListViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/MyMangaList/ViewModel/ListViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_statistics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_statistics.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/progetto/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/MyMangaList/ExampleUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +37,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\ciani\.android\avd\Pixel_6_API_34.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\morog\.android\avd\Pixel_6_API_34.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -96,12 +62,12 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/ciani/Desktop/Mobile"
+    "last_opened_file_path": "C:/Users/morog/Desktop/Mobile"
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="MyMangaList.app.main" />
+      <module name="Progetto.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -116,7 +82,7 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
