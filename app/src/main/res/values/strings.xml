@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">My Wardrobe</string>
+    <string name="search">Search</string>
+    <string name="statistics">Wardrobe numbers</string>
+    <string name="image_of_the_item">Image of the item</string>
+    <string name="item_title">Item Title</string>
+    <string name="date">Acquisition date</string>
+    <string name="add_new_item">Add new item +</string>
+    <string name="take_gps_position">Take gps position</string>
+    <string name="description">Description</string>
+    <string name="take_a_picture">Take a picture</string>
+    <string name="image_captured">Image captured</string>
+    <string name="delete">Delete</string>
+    <string name="username">Username</string>
+    <string name="category_text">Category: </string>
+    <string name="wear_count">Wear it!</string>
+    <string name="take_date" >Date</string>
+    <string name="location" >Store location</string>
+    <string name="price" >Price</string>
+    <string name="category">Category</string>
+    <string name="price_text">Price EUR€:</string>
+    <string name="date_text" >Acquisition date: </string>
+    <string name="location_text" >Store location: </string>
+    <string name="select_a_picture" >Select picture</string>
+    <string name="finances_txt" >Your wardrobe info:</string>
+    <string name="total_price_text" >You spent on your wardrobe:</string>
+    <string name="total_price_label_txt" >price</string>
+    <string name="value" >€</string>
+    <string name="items_in" >Items in your wordrobe</string>
+    <string name="tops" >Tops</string>
+    <string name="bottoms" >Bottoms</string>
+    <string name="outwear" >Outwear</string>
+    <string name="accessories" >Accessories</string>
+    <string name="bags" >Bags</string>
+    <string name="footwear" >Footwear</string>
+    <string name="all">Show all</string>
+    <string-array name="categories_array">
+        <item>Select a category:</item>
+        <item>Tops</item>
+        <item>Bottoms</item>
+        <item>Outwear</item>
+        <item>Accessories</item>
+        <item>Bags</item>
+        <item>Footwear</item>
+    </string-array>
+</resources>
