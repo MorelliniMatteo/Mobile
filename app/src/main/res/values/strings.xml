@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Wardrobe</string>
+    <string name="app_name">MyMangaList</string>
     <string name="search">Search</string>
     <string name="statistics">Wardrobe numbers</string>
     <string name="image_of_the_item">Image of the item</string>
