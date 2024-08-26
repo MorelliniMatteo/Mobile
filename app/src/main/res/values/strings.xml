@@ -27,7 +27,7 @@
     <string name="total_price_label_txt" >price</string>
     <string name="value">€</string>
     <string name="items_in" >Manga in your list</string>
-    <string name="tops" >Action</string>
+    <string name="action" >Action</string>
     <string name="bottoms" >Comedy</string>
     <string name="outwear" >Horror</string>
     <string name="accessories" >Romance</string>
@@ -38,7 +38,7 @@
     <string name="Supernatural" >Supernatural</string>
     <string name="all">Show all genres</string>
     <string-array name="categories_array">
-        <item>Select a gender:</item>
+        <item>Select a genres:</item>
         <item>Action</item>
         <item>Comedy</item>
         <item>Horror</item>

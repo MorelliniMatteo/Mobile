@@ -52,7 +52,7 @@ public class TopsFragment extends Fragment implements OnItemListener {
         super.onViewCreated(view, savedInstanceState);
         FragmentActivity activity = getActivity();
         if (activity != null) {
-            Utilities.setUpToolbar((AppCompatActivity) activity, getString(R.string.tops));
+            Utilities.setUpToolbar((AppCompatActivity) activity, getString(R.string.action));
 
             setRecyclerView(activity);
 
@@ -60,13 +60,13 @@ public class TopsFragment extends Fragment implements OnItemListener {
             listViewModel.getCardItems().observe(activity, new Observer<List<CardItem>>() {
                 @Override
                 public void onChanged(List<CardItem> cardItems) {
-                    List<CardItem> tops = new ArrayList<>();
+                    List<CardItem> action = new ArrayList<>();
                     for(CardItem elem : cardItems){
-                        if (elem.getCategory().equals("Tops")){
-                            tops.add(elem);
+                        if (elem.getCategory().equals("Action")){
+                            action.add(elem);
                         }
                     }
-                    adapter.setData(tops);
+                    adapter.setData(action);
                 }
             });
 
