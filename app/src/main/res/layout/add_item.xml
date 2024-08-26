@@ -222,6 +222,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/capture_button" />
 
+            <RadioGroup
+                android:layout_width="64dp"
+                android:layout_height="116dp"
+                tools:layout_editor_absoluteX="333dp"
+                tools:layout_editor_absoluteY="384dp" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -13,7 +13,7 @@
     <string name="delete">Delete</string>
     <string name="username">Username</string>
     <string name="category_text">Genres : </string>
-    <string name="wear_count">Wear it!</string>
+    <string name="wear_count">Rating</string>
     <string name="take_date" >Date</string>
     <string name="location" >Store location</string>
     <string name="price" >Price</string>
