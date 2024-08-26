@@ -28,11 +28,11 @@
     <string name="value">€</string>
     <string name="items_in" >Manga in your list</string>
     <string name="action" >Action</string>
-    <string name="bottoms" >Comedy</string>
-    <string name="outwear" >Horror</string>
-    <string name="accessories" >Romance</string>
-    <string name="bags" >Slice of life</string>
-    <string name="footwear" >Sci-fi</string>
+    <string name="comedy" >Comedy</string>
+    <string name="horror" >Horror</string>
+    <string name="romance" >Romance</string>
+    <string name="sliceOfLife" >Slice of life</string>
+    <string name="sci_fi" >Sci-fi</string>
     <string name="Mystery">Mystery</string>
     <string name="Sports" >Sports</string>
     <string name="Supernatural" >Supernatural</string>

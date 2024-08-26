@@ -27,7 +27,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TopsFragment extends Fragment implements OnItemListener {
+public class HorrorFragment extends Fragment implements OnItemListener {
 
     private CardAdapter adapter;
 
@@ -52,7 +52,7 @@ public class TopsFragment extends Fragment implements OnItemListener {
         super.onViewCreated(view, savedInstanceState);
         FragmentActivity activity = getActivity();
         if (activity != null) {
-            Utilities.setUpToolbar((AppCompatActivity) activity, getString(R.string.action));
+            Utilities.setUpToolbar((AppCompatActivity) activity, getString(R.string.horror));
 
             setRecyclerView(activity);
 
@@ -60,13 +60,13 @@ public class TopsFragment extends Fragment implements OnItemListener {
             listViewModel.getCardItems().observe(activity, new Observer<List<CardItem>>() {
                 @Override
                 public void onChanged(List<CardItem> cardItems) {
-                    List<CardItem> action = new ArrayList<>();
+                    List<CardItem> horror = new ArrayList<>();
                     for(CardItem elem : cardItems){
-                        if (elem.getCategory().equals("Action")){
-                            action.add(elem);
+                        if (elem.getCategory().equals("Horror")){
+                            horror.add(elem);
                         }
                     }
-                    adapter.setData(action);
+                    adapter.setData(horror);
                 }
             });
 
@@ -145,3 +145,4 @@ public class TopsFragment extends Fragment implements OnItemListener {
         });
     }
 }
+

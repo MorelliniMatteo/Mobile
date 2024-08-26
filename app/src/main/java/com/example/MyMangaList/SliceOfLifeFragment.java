@@ -27,7 +27,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccessoriesFragment extends Fragment implements OnItemListener {
+public class SliceOfLifeFragment extends Fragment implements OnItemListener {
 
     private CardAdapter adapter;
 
@@ -52,7 +52,7 @@ public class AccessoriesFragment extends Fragment implements OnItemListener {
         super.onViewCreated(view, savedInstanceState);
         FragmentActivity activity = getActivity();
         if (activity != null) {
-            Utilities.setUpToolbar((AppCompatActivity) activity, getString(R.string.accessories));
+            Utilities.setUpToolbar((AppCompatActivity) activity, getString(R.string.sliceOfLife));
 
             setRecyclerView(activity);
 
@@ -60,13 +60,13 @@ public class AccessoriesFragment extends Fragment implements OnItemListener {
             listViewModel.getCardItems().observe(activity, new Observer<List<CardItem>>() {
                 @Override
                 public void onChanged(List<CardItem> cardItems) {
-                    List<CardItem> accessories = new ArrayList<>();
+                    List<CardItem> sliceOfLife = new ArrayList<>();
                     for(CardItem elem : cardItems){
-                        if (elem.getCategory().equals("Accessories")){
-                            accessories.add(elem);
+                        if (elem.getCategory().equals("Slice of Life")){
+                            sliceOfLife.add(elem);
                         }
                     }
-                    adapter.setData(accessories);
+                    adapter.setData(sliceOfLife);
                 }
             });
 

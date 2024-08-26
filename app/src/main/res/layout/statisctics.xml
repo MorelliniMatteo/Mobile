@@ -120,7 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="@string/bottoms"
+                android:text="@string/comedy"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 app:layout_constraintStart_toEndOf="@id/bottoms_label"
                 app:layout_constraintTop_toBottomOf="@id/tops" />
@@ -141,7 +141,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="@string/outwear"
+                android:text="@string/horror"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 app:layout_constraintStart_toEndOf="@id/outwear_label"
                 app:layout_constraintTop_toBottomOf="@id/bottoms" />
@@ -162,7 +162,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="@string/accessories"
+                android:text="@string/romance"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 app:layout_constraintStart_toEndOf="@id/accessories_label"
                 app:layout_constraintTop_toBottomOf="@id/outwear" />
@@ -183,7 +183,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="@string/bags"
+                android:text="@string/sliceOfLife"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 app:layout_constraintStart_toEndOf="@id/bags_label"
                 app:layout_constraintTop_toBottomOf="@id/accessories" />
@@ -204,7 +204,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="@string/footwear"
+                android:text="@string/sci_fi"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 app:layout_constraintStart_toEndOf="@id/footwear_label"
                 app:layout_constraintTop_toBottomOf="@id/bags" />
