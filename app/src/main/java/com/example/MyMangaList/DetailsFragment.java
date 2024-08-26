@@ -36,8 +36,10 @@ public class DetailsFragment extends Fragment {
     private TextView priceTextView;
     private TextView categoryTextView;
     private TextView locationTextView;
-
     private ImageView itemImageView;
+
+    private ListViewModel listViewModel;
+    private AddViewModel addViewModel;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,16 +69,25 @@ public class DetailsFragment extends Fragment {
             itemImageView = view.findViewById(R.id.item_image);
             locationTextView = view.findViewById(R.id.location);
 
-            ListViewModel listViewModel = new ViewModelProvider((ViewModelStoreOwner) activity).get(ListViewModel.class);
+            listViewModel = new ViewModelProvider((ViewModelStoreOwner) activity).get(ListViewModel.class);
+            addViewModel = new ViewModelProvider((ViewModelStoreOwner) activity).get(AddViewModel.class);
+
             listViewModel.getItemSelected().observe(getViewLifecycleOwner(), new Observer<CardItem>() {
                 @Override
                 public void onChanged(CardItem cardItem) {
+                    if (cardItem == null) {
+                        // Gestisci il caso in cui il CardItem è nullo
+                        Log.d("DetailsFragment", "L'articolo è nullo, non mostro i dettagli");
+                        return;
+                    }
+
                     itemTextView.setText(cardItem.getItemName());
                     descriptionTextView.setText(cardItem.getItemDescription());
                     dateTextView.setText(cardItem.getDate());
                     priceTextView.setText(cardItem.getPrice());
                     categoryTextView.setText(cardItem.getCategory());
                     locationTextView.setText(cardItem.getLocation());
+
                     String image_path = cardItem.getImageResource();
                     if (image_path.contains("ic_")) {
                         Drawable drawable = ResourcesCompat.getDrawable(activity.getResources(),
@@ -92,52 +103,63 @@ public class DetailsFragment extends Fragment {
                 }
             });
 
-            AddViewModel addViewModel = new ViewModelProvider((ViewModelStoreOwner) activity).get(AddViewModel.class);
             view.findViewById(R.id.delete_button).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    showDeleteConfirmationDialog(addViewModel, listViewModel);
+                    showDeleteConfirmationDialog();
                 }
             });
 
             view.findViewById(R.id.wear_count_button).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    listViewModel.getItemSelected().getValue().setWear_count(listViewModel.getItemSelected().getValue().getWear_count() + 1);
-                    addViewModel.increment(listViewModel.getItemSelected().getValue());
-                    ((AppCompatActivity) activity).getSupportFragmentManager().popBackStack();
+                    CardItem selectedItem = listViewModel.getItemSelected().getValue();
+                    if (selectedItem != null) {
+                        selectedItem.setWear_count(selectedItem.getWear_count() + 1);
+                        addViewModel.increment(selectedItem);
+                        ((AppCompatActivity) activity).getSupportFragmentManager().popBackStack();
+                    }
                 }
             });
         }
     }
 
-    private void showDeleteConfirmationDialog(AddViewModel addViewModel, ListViewModel listViewModel) {
+    private void showDeleteConfirmationDialog() {
+        CardItem item = listViewModel.getItemSelected().getValue();
+        if (item == null) {
+            Toast.makeText(getActivity(), "Nessun articolo selezionato per l'eliminazione", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         new AlertDialog.Builder(getActivity())
                 .setTitle("Conferma Eliminazione")
                 .setMessage("Sei sicuro di voler eliminare questo articolo?")
                 .setPositiveButton("Conferma", (dialog, which) -> {
-                    // Azione da eseguire quando l'utente conferma
-                    CardItem item = listViewModel.getItemSelected().getValue();
-                    if (item != null) {
-                        addViewModel.deleteCardItem(item);
+                    Log.d("DetailsFragment", "Eliminazione dell'articolo: " + item.getItemName());
+                    addViewModel.deleteCardItem(item);
+                    listViewModel.getItemSelected().setValue(null); // Rimuovi l'elemento selezionato
 
-                        // Rimuovere l'articolo dal ViewModel e aggiornare la UI
-                        listViewModel.getItemSelected().setValue(null); // Oppure aggiornare la lista come appropriato
-
-                        // Pop del back stack per tornare indietro immediatamente dopo l'eliminazione
-                        ((AppCompatActivity) getActivity()).getSupportFragmentManager().popBackStack();
+                    // Gestisci la navigazione al frammento precedente o chiudi l'attività
+                    AppCompatActivity activity = (AppCompatActivity) getActivity();
+                    if (activity != null && !activity.isFinishing()) {
+                        if (activity.getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                            Log.d("DetailsFragment", "Pop back stack");
+                            activity.getSupportFragmentManager().popBackStack();
+                        } else {
+                            // Se non c'è back stack, chiudi l'attività
+                            Log.d("DetailsFragment", "Nessun back stack, chiudi l'attività");
+                            activity.finish();
+                        }
                     } else {
-                        Log.e("DetailsFragment", "Item to delete is null");
+                        Log.e("DetailsFragment", "L'Activity non è disponibile o è in fase di chiusura");
                     }
                 })
                 .setNegativeButton("Annulla", (dialog, which) -> {
-                    // Azione da eseguire quando l'utente annulla
                     dialog.dismiss();
                 })
                 .create()
                 .show();
     }
-
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
