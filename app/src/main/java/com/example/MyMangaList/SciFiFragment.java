@@ -27,7 +27,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TopsFragment extends Fragment implements OnItemListener {
+public class SciFiFragment extends Fragment implements OnItemListener {
 
     private CardAdapter adapter;
 
@@ -52,7 +52,7 @@ public class TopsFragment extends Fragment implements OnItemListener {
         super.onViewCreated(view, savedInstanceState);
         FragmentActivity activity = getActivity();
         if (activity != null) {
-            Utilities.setUpToolbar((AppCompatActivity) activity, getString(R.string.tops));
+            Utilities.setUpToolbar((AppCompatActivity) activity, getString(R.string.sci_fi));
 
             setRecyclerView(activity);
 
@@ -60,13 +60,13 @@ public class TopsFragment extends Fragment implements OnItemListener {
             listViewModel.getCardItems().observe(activity, new Observer<List<CardItem>>() {
                 @Override
                 public void onChanged(List<CardItem> cardItems) {
-                    List<CardItem> tops = new ArrayList<>();
+                    List<CardItem> sci_fi = new ArrayList<>();
                     for(CardItem elem : cardItems){
-                        if (elem.getCategory().equals("Tops")){
-                            tops.add(elem);
+                        if (elem.getCategory().equals("Sci-Fi")){
+                            sci_fi.add(elem);
                         }
                     }
-                    adapter.setData(tops);
+                    adapter.setData(sci_fi);
                 }
             });
 
@@ -145,3 +145,4 @@ public class TopsFragment extends Fragment implements OnItemListener {
         });
     }
 }
+

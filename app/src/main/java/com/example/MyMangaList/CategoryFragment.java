@@ -44,37 +44,37 @@ public class CategoryFragment extends Fragment {
             view.findViewById(R.id.buttonTops).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new TopsFragment(), TopsFragment.class.getSimpleName());
+                    Utilities.insertFragment((AppCompatActivity) activity, new ActionFragment(), ActionFragment.class.getSimpleName());
                 }
             });
             view.findViewById(R.id.buttonBottoms).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new BottomsFragment(), BottomsFragment.class.getSimpleName());
+                    Utilities.insertFragment((AppCompatActivity) activity, new ComedyFragment(), ComedyFragment.class.getSimpleName());
                 }
             });
             view.findViewById(R.id.buttonOutwear).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new OutwearFragment(), OutwearFragment.class.getSimpleName());
+                    Utilities.insertFragment((AppCompatActivity) activity, new HorrorFragment(), HorrorFragment.class.getSimpleName());
                 }
             });
             view.findViewById(R.id.buttonAccessories).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new AccessoriesFragment(), AccessoriesFragment.class.getSimpleName());
+                    Utilities.insertFragment((AppCompatActivity) activity, new RomanceFragment(), RomanceFragment.class.getSimpleName());
                 }
             });
             view.findViewById(R.id.buttonBags).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new BagsFragment(), BagsFragment.class.getSimpleName());
+                    Utilities.insertFragment((AppCompatActivity) activity, new SliceOfLifeFragment(), SliceOfLifeFragment.class.getSimpleName());
                 }
             });
             view.findViewById(R.id.buttonFootwear).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new FootwearFragment(), FootwearFragment.class.getSimpleName());
+                    Utilities.insertFragment((AppCompatActivity) activity, new SciFiFragment(), SciFiFragment.class.getSimpleName());
                 }
             });
 

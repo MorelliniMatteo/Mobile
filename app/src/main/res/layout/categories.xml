@@ -18,10 +18,10 @@
         android:id="@+id/buttonTops"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="3dp"
         android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="3dp"
         android:backgroundTint="@color/purple_500"
-        android:text="@string/tops" />
+        android:text="@string/action" />
 
     <Button
         android:id="@+id/buttonBottoms"
@@ -30,7 +30,7 @@
         android:layout_marginVertical="3dp"
         android:layout_marginHorizontal="10dp"
         android:backgroundTint="@color/purple_500"
-        android:text="@string/bottoms" />
+        android:text="@string/comedy" />
 
     <Button
         android:id="@+id/buttonOutwear"
@@ -39,7 +39,7 @@
         android:layout_marginVertical="3dp"
         android:layout_marginHorizontal="10dp"
         android:backgroundTint="@color/purple_500"
-        android:text="@string/outwear" />
+        android:text="@string/horror" />
 
     <Button
         android:id="@+id/buttonAccessories"
@@ -48,7 +48,7 @@
         android:layout_marginVertical="3dp"
         android:layout_marginHorizontal="10dp"
         android:backgroundTint="@color/purple_500"
-        android:text="@string/accessories" />
+        android:text="@string/romance" />
 
     <Button
         android:id="@+id/buttonBags"
@@ -57,7 +57,7 @@
         android:layout_marginVertical="3dp"
         android:layout_marginHorizontal="10dp"
         android:backgroundTint="@color/purple_500"
-        android:text="@string/bags" />
+        android:text="@string/sliceOfLife" />
 
     <Button
         android:id="@+id/buttonFootwear"
@@ -66,7 +66,7 @@
         android:layout_marginVertical="3dp"
         android:layout_marginHorizontal="10dp"
         android:backgroundTint="@color/purple_500"
-        android:text="@string/footwear" />
+        android:text="@string/sci_fi" />
 
     <Button
         android:id="@+id/buttonAdd"
