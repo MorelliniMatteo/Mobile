@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         TextView signUpTextView = findViewById(R.id.textViewSignUp);
 
         // Testo completo con "sign-up" cliccabile
-        String text = "Se non sei ancora registrato fai sign-up";
+        String text = "Don't have an account? sign-up";
         SpannableString spannableString = new SpannableString(text);
 
         // Trova l'indice della parola "sign-up"

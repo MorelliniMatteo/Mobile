@@ -2,7 +2,13 @@ package com.example.MyMangaList;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.style.ClickableSpan;
+import android.text.style.ForegroundColorSpan;
+import android.text.method.LinkMovementMethod;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,17 +39,39 @@ public class RegistrationActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.password_registration);
         confirmPasswordEditText = findViewById(R.id.confirm_pass);
         registerButton = findViewById(R.id.buttonSignUp);
-        signInTextView = findViewById(R.id.textViewSignIn); // Associa la variabile al TextView
+        signInTextView = findViewById(R.id.textViewSignIn);
 
         registerButton.setOnClickListener(v -> registerUser());
 
-        // Imposta un OnClickListener per il TextView "Sign-in"
-        signInTextView.setOnClickListener(v -> {
-            // Avvia la LoginActivity
-            Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-            startActivity(intent);
-            finish(); // Chiude la RegistrationActivity in modo che l'utente non possa tornare indietro con il tasto back
-        });
+        // Testo completo con "sign-in" cliccabile
+        String signInText = "Do you already have an account? sign-in";
+        SpannableString spannableString = new SpannableString(signInText);
+
+        // Trova l'indice della parola "sign-in"
+        int signInStart = signInText.indexOf("sign-in");
+        int signInEnd = signInStart + "sign-in".length();
+
+        // Crea ClickableSpan
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+                // Avvia la LoginActivity quando viene cliccato
+                Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish(); // Chiude la RegistrationActivity in modo che l'utente non possa tornare indietro con il tasto back
+            }
+        };
+
+        // Applica il ClickableSpan solo alla parola "sign-in"
+        spannableString.setSpan(clickableSpan, signInStart, signInEnd, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        // Cambia il colore del testo "sign-in" per farlo sembrare un link
+        spannableString.setSpan(new ForegroundColorSpan(getResources().getColor(android.R.color.holo_blue_light)),
+                signInStart, signInEnd, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        // Imposta il testo modificato sul TextView
+        signInTextView.setText(spannableString);
+        signInTextView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     private void registerUser() {
@@ -78,7 +106,7 @@ public class RegistrationActivity extends AppCompatActivity {
         Intent intent = new Intent(RegistrationActivity.this, HomeFragment.class);
         startActivity(intent);
 
-        // Opzionale: chiudi l'activity di registrazione per prevenire il ritorno con il pulsante back
+        // Chiudi l'activity di registrazione per prevenire il ritorno con il pulsante back
         finish();
     }
 }
