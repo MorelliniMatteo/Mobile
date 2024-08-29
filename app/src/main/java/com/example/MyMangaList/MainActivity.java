@@ -1,8 +1,5 @@
 package com.example.MyMangaList;
 
-import static com.example.MyMangaList.Utilities.REQUEST_IMAGE_CAPTURE;
-import static com.example.MyMangaList.Utilities.REQUEST_IMAGE_TAKEN;
-
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -13,19 +10,18 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
-
 import com.example.MyMangaList.ViewModel.AddViewModel;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+import static com.example.MyMangaList.Utilities.REQUEST_IMAGE_CAPTURE;
+import static com.example.MyMangaList.Utilities.REQUEST_IMAGE_TAKEN;
 
+public class MainActivity extends AppCompatActivity {
     private AddViewModel addViewModel;
     ArrayList barrArrayList;
 

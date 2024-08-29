@@ -1,37 +1,30 @@
 package com.example.MyMangaList.Database;
 
 import android.content.Context;
-
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-
 import com.example.MyMangaList.CardItem;
-
+import com.example.MyMangaList.User;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/**
- * The class that identifies the DB: we specify the entities inside and the DB version
- */
-@Database(entities = {CardItem.class}, version = 6)
+@Database(entities = {CardItem.class, User.class}, version = 7, exportSchema = false)
 public abstract class CardItemDatabase extends RoomDatabase {
-
     public abstract CardItemDAO cardItemDAO();
+    public abstract UserDAO userDAO();
 
-    ///Singleton instance to retrieve when the db is needed
     private static volatile CardItemDatabase INSTANCE;
+    private static final int NUMBER_OF_THREADS = 4;
+    static final ExecutorService databaseWriteExecutor =
+            Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    static final ExecutorService executor = Executors.newFixedThreadPool(4);
-
-    static CardItemDatabase getDatabase(final Context context){
-        if (INSTANCE == null){
-            //The synchronized is to prevent multiple instances being created.
+    public static CardItemDatabase getDatabase(final Context context) {
+        if (INSTANCE == null) {
             synchronized (CardItemDatabase.class) {
-                //If the db has not yet been created, the builder creates it.
-                if (INSTANCE == null){
+                if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            CardItemDatabase.class, "item_database")
+                                    CardItemDatabase.class, "card_item_database")
                             .fallbackToDestructiveMigration()
                             .build();
                 }

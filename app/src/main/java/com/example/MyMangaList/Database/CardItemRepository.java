@@ -30,7 +30,7 @@ public class CardItemRepository {
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures
     // that you're not doing any long running operations on the main thread, blocking the UI.
     public void addCardItem(CardItem cardItem) {
-        CardItemDatabase.executor.execute(new Runnable() {
+        CardItemDatabase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
                 cardItemDAO.addCardItem(cardItem);
@@ -39,7 +39,7 @@ public class CardItemRepository {
     }
 
     public void deleteCardItem(CardItem item) {
-        CardItemDatabase.executor.execute(new Runnable() {
+        CardItemDatabase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
                 cardItemDAO.delete(item);
@@ -48,7 +48,7 @@ public class CardItemRepository {
     }
 
     public void increment(CardItem cardItem){
-        CardItemDatabase.executor.execute(new Runnable() {
+        CardItemDatabase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
                 cardItemDAO.incrementCount(cardItem);

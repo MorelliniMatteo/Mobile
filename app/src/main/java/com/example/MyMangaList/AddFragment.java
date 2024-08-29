@@ -157,7 +157,7 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
 
             Utilities.setUpToolbar((AppCompatActivity) activity, "Add Item");
 
-            view.findViewById(R.id.capture_button).setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.take_picture_button).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -168,7 +168,7 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
                 }
             });
 
-            view.findViewById(R.id.gallery_button).setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.select_picture_button).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent selectPicture = new Intent(Intent.ACTION_GET_CONTENT,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -190,8 +190,8 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
                 }
             });
 
-            itemTIET = view.findViewById(R.id.item_edittext);
-            TextInputEditText dateTIET = view.findViewById(R.id.date_edittext);
+            itemTIET = view.findViewById(R.id.title_edittext);
+            TextInputEditText dateTIET = view.findViewById(R.id.purchase_date_edittext);
             TextInputEditText priceTIET = view.findViewById(R.id.price_edittext);
             descriptionTIET = view.findViewById(R.id.description_edittext);
             locationTIET = view.findViewById(R.id.location_edittext);
@@ -241,7 +241,7 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
                 }
             });
 
-            view.findViewById(R.id.date_button).setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.purchase_date_edittext).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     final Calendar cldr = Calendar.getInstance();
