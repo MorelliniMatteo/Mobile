@@ -14,7 +14,7 @@ public class UserRepository {
     }
 
     public void registerUser(User user) {
-        CardItemDatabase.executor.execute(() -> {
+        CardItemDatabase.databaseWriteExecutor.execute(() -> {
             userDAO.insertUser(user);
         });
     }
@@ -30,5 +30,4 @@ public class UserRepository {
     public User getUserByUsername(String username) {
         return userDAO.getUserByUsername(username);
     }
-
 }
