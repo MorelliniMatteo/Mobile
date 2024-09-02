@@ -14,6 +14,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:name="com.example.MyMangaList.SettingsFragment"
-        tools:layout="@layout/statisctics" />
+        tools:layout="@layout/profile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

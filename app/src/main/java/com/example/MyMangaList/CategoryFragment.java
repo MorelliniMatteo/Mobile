@@ -17,7 +17,7 @@ public class CategoryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.categories, container, false);
+        return inflater.inflate(R.layout.genres, container, false);
     }
 
     @Override
@@ -41,37 +41,37 @@ public class CategoryFragment extends Fragment {
                     Utilities.insertFragment((AppCompatActivity) activity, new HomeFragment(), HomeFragment.class.getSimpleName());
                 }
             });
-            view.findViewById(R.id.buttonTops).setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.buttonAction).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Utilities.insertFragment((AppCompatActivity) activity, new ActionFragment(), ActionFragment.class.getSimpleName());
                 }
             });
-            view.findViewById(R.id.buttonBottoms).setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.buttonComedy).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Utilities.insertFragment((AppCompatActivity) activity, new ComedyFragment(), ComedyFragment.class.getSimpleName());
                 }
             });
-            view.findViewById(R.id.buttonOutwear).setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.buttonHorror).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Utilities.insertFragment((AppCompatActivity) activity, new HorrorFragment(), HorrorFragment.class.getSimpleName());
                 }
             });
-            view.findViewById(R.id.buttonAccessories).setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.buttonRomance).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Utilities.insertFragment((AppCompatActivity) activity, new RomanceFragment(), RomanceFragment.class.getSimpleName());
                 }
             });
-            view.findViewById(R.id.buttonBags).setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.buttonSOL).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Utilities.insertFragment((AppCompatActivity) activity, new SliceOfLifeFragment(), SliceOfLifeFragment.class.getSimpleName());
                 }
             });
-            view.findViewById(R.id.buttonFootwear).setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.buttonScifi).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Utilities.insertFragment((AppCompatActivity) activity, new SciFiFragment(), SciFiFragment.class.getSimpleName());

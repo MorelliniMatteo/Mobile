@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@id/bottom_nav">
+
+        <Button
+            android:id="@+id/buttonAction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="3dp"
+            android:backgroundTint="@color/purple_700"
+            android:text="@string/action" />
+
+        <Button
+            android:id="@+id/buttonComedy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="3dp"
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="@color/purple_700"
+            android:text="@string/comedy" />
+
+        <Button
+            android:id="@+id/buttonHorror"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="3dp"
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="@color/purple_700"
+            android:text="@string/horror" />
+
+        <Button
+            android:id="@+id/buttonRomance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="3dp"
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="@color/purple_700"
+            android:text="@string/romance" />
+
+        <Button
+            android:id="@+id/buttonSOL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="3dp"
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="@color/purple_700"
+            android:text="@string/sliceOfLife" />
+
+        <Button
+            android:id="@+id/buttonScifi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="3dp"
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="@color/purple_700"
+            android:text="@string/sci_fi" />
+
+        <Button
+            android:id="@+id/buttonAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="3dp"
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="@color/purple_700"
+            android:text="@string/show_all" />
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        app:menu="@menu/bot_app_bar" />
+
+</RelativeLayout>

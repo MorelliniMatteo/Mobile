@@ -9,12 +9,11 @@
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="@dimen/cardview_default_radius"
     app:strokeWidth="1dp"
-    app:strokeColor="@color/material_on_surface_stroke"
-    >
+    app:strokeColor="@color/material_on_surface_stroke">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="294dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <ImageView
@@ -39,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:text="@string/price"
+            android:text="@string/category"
             android:textAppearance="@style/TextAppearance.Material3.LabelLarge" />
 
         <TextView
@@ -47,15 +46,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:text="@string/date"
+            android:text="@string/description"
             android:textAppearance="@style/TextAppearance.Material3.LabelLarge" />
 
-        <TextView
-            android:id="@+id/wear_count_textview"
-            android:layout_width="match_parent"
+        <!-- Pulsante cliccabile a forma di stella -->
+        <ImageButton
+            android:id="@+id/star_button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:text="@string/wear_count"
-            android:textAppearance="@style/TextAppearance.Material3.LabelLarge" />
+            android:layout_margin="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/favorite"
+            android:padding="8dp"
+            android:src="@drawable/ic_favorite" />
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </com.google.android.material.card.MaterialCardView>

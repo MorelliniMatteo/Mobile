@@ -16,6 +16,8 @@
     <string name="wear_count">Read it</string>
     <string name="take_date" >Date</string>
     <string name="location" >Store location</string>
+    <string name="completed" >Completed</string>
+    <string name="plan_to_read" >Plan to read</string>
     <string name="price" >Price</string>
     <string name="category">Genres</string>
     <string name="price_text">Price EUR€:</string>
@@ -23,6 +25,11 @@
     <string name="location_text" >Store location: </string>
     <string name="select_a_picture" >Select picture</string>
     <string name="finances_txt" >Your manga list info:</string>
+    <string name="favorite" >Favorite</string>
+    <string name="complited" >Complited</string>
+    <string name="reading" >Reading</string>
+    <string name="profile" >Profile name</string>
+    <string name="show_all" >Show All</string>
     <string name="total_price_text" >Money spent on manga:</string>
     <string name="total_price_label_txt" >price</string>
     <string name="value">€</string>

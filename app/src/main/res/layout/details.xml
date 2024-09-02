@@ -143,8 +143,8 @@
 
             <TextView
                 android:id="@+id/item_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="395dp"
+                android:layout_height="39dp"
                 android:layout_margin="10dp"
                 android:text="@string/description"
                 android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
@@ -152,32 +152,79 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/location" />
 
+            <!-- Prima riga di pulsanti -->
             <Button
                 android:id="@+id/wear_count_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="143dp"
+                android:layout_height="35dp"
+                android:layout_margin="4dp"
                 android:backgroundTint="@color/gray"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp"
                 android:text="@string/wear_count"
                 android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
-                app:icon="@drawable/ic_baseline_add_24"
+                app:icon="@drawable/ic_play"
                 app:layout_constraintEnd_toStartOf="@id/delete_button"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_description" />
+                app:layout_constraintTop_toBottomOf="@id/item_description"
+                app:layout_constraintWidth_percent="0.5" />
 
+            <!-- Seconda riga di pulsanti -->
             <Button
                 android:id="@+id/delete_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_width="161dp"
+                android:layout_height="35dp"
+                android:layout_margin="4dp"
                 android:backgroundTint="@color/gray"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp"
                 android:text="@string/delete"
                 android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
                 app:icon="@drawable/ic_baseline_delete_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/wear_count_button"
-                app:layout_constraintTop_toBottomOf="@id/item_description" />
+                app:layout_constraintTop_toBottomOf="@id/item_description"
+                app:layout_constraintWidth_percent="0.5" />
+
+            <Button
+                android:id="@+id/completed_button"
+                android:layout_width="142dp"
+                android:layout_height="37dp"
+                android:layout_margin="4dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/gray"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp"
+                android:text="@string/completed"
+                android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+                app:icon="@drawable/ic_check"
+                app:layout_constraintEnd_toStartOf="@id/plan_to_read_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/wear_count_button"
+                app:layout_constraintWidth_percent="0.5" />
+
+            <Button
+                android:id="@+id/plan_to_read_button"
+                android:layout_width="161dp"
+                android:layout_height="36dp"
+                android:layout_margin="4dp"
+                android:backgroundTint="@color/gray"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp"
+                android:text="@string/plan_to_read"
+                android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/completed_button"
+                app:layout_constraintTop_toBottomOf="@id/delete_button"
+                app:layout_constraintWidth_percent="0.5" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

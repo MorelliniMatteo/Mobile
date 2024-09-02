@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingActivity">
+    tools:context=".SettingActivity"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,69 +24,129 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.50" />
 
-            <ImageView
-                android:id="@+id/finances_image"
-                android:layout_width="match_parent"
-                android:layout_height="108dp"
-                android:layout_margin="10dp"
-                android:background="@color/gray"
-                android:contentDescription="@string/finances_txt"
+            <!-- My Profile Title -->
+
+            <!-- Profile Section -->
+            <TextView
+                android:id="@+id/my_profile_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="My Profile"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@id/profile_icon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_book" />
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/profile_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/my_profile_title"
+                app:srcCompat="@drawable/ic_profile" />
 
             <TextView
-                android:id="@+id/total_price_label"
+                android:id="@+id/profile_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_margin="10dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/total_price_text"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/profile"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                app:layout_constraintStart_toEndOf="@id/profile_icon"
+                app:layout_constraintTop_toTopOf="@id/profile_icon"
+                app:layout_constraintBottom_toBottomOf="@id/profile_icon"
+                tools:text="Your Name" />
+
+            <!-- Manga Stats -->
+            <TextView
+                android:id="@+id/completed_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Completed:"
+                android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/finances_image"
-                tools:text="Money spent in your manga collection:" />
-
+                app:layout_constraintTop_toBottomOf="@id/profile_icon" />
 
             <TextView
-                android:id="@+id/total_price"
+                android:id="@+id/completed_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/total_price_label_txt"
+                android:text="@string/completed"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/total_price_label" />
+                app:layout_constraintStart_toEndOf="@id/completed_label"
+                app:layout_constraintTop_toBottomOf="@id/profile_icon" />
 
             <TextView
-                android:id="@+id/value"
+                android:id="@+id/reading_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/value"
-                android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                app:layout_constraintStart_toEndOf="@id/total_price"
-                app:layout_constraintTop_toBottomOf="@id/total_price_label" />
-
-            <TextView
-                android:id="@+id/string"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_margin="10dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/items_in"
+                android:text="Reading:"
+                android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/completed_label" />
+
+            <TextView
+                android:id="@+id/reading_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/reading"
+                android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+                app:layout_constraintStart_toEndOf="@id/reading_label"
+                app:layout_constraintTop_toBottomOf="@id/completed_label" />
+
+            <TextView
+                android:id="@+id/plan_to_read_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Plan to read:"
+                android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reading_label" />
+
+            <TextView
+                android:id="@+id/plan_to_read_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/plan_to_read"
+                android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+                app:layout_constraintStart_toEndOf="@id/plan_to_read_label"
+                app:layout_constraintTop_toBottomOf="@id/reading_label" />
+
+            <!-- Genres Section -->
+            <TextView
+                android:id="@+id/genres_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="Manga you own divided by genres:"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/total_price" />
+                app:layout_constraintTop_toBottomOf="@id/plan_to_read_label" />
 
             <TextView
                 android:id="@+id/action_label"
@@ -95,17 +157,17 @@
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 android:textColor="@color/purple_700"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/string" />
+                app:layout_constraintTop_toBottomOf="@id/genres_title" />
 
             <TextView
-                android:id="@+id/tops"
+                android:id="@+id/action_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/action"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 app:layout_constraintStart_toEndOf="@id/action_label"
-                app:layout_constraintTop_toBottomOf="@id/string" />
+                app:layout_constraintTop_toBottomOf="@id/genres_title" />
 
             <TextView
                 android:id="@+id/comedy_label"
@@ -116,17 +178,17 @@
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 android:textColor="@color/purple_700"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tops" />
+                app:layout_constraintTop_toBottomOf="@id/action_label" />
 
             <TextView
-                android:id="@+id/bottoms"
+                android:id="@+id/comedy_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/comedy"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 app:layout_constraintStart_toEndOf="@id/comedy_label"
-                app:layout_constraintTop_toBottomOf="@id/tops" />
+                app:layout_constraintTop_toBottomOf="@id/action_label" />
 
             <TextView
                 android:id="@+id/horror_label"
@@ -137,17 +199,17 @@
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 android:textColor="@color/purple_700"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bottoms" />
+                app:layout_constraintTop_toBottomOf="@id/comedy_label" />
 
             <TextView
-                android:id="@+id/outwear"
+                android:id="@+id/horror_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/horror"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 app:layout_constraintStart_toEndOf="@id/horror_label"
-                app:layout_constraintTop_toBottomOf="@id/bottoms" />
+                app:layout_constraintTop_toBottomOf="@id/comedy_label" />
 
             <TextView
                 android:id="@+id/romance_label"
@@ -158,17 +220,17 @@
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 android:textColor="@color/purple_700"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/outwear" />
+                app:layout_constraintTop_toBottomOf="@id/horror_label" />
 
             <TextView
-                android:id="@+id/accessories"
+                android:id="@+id/romance_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/romance"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 app:layout_constraintStart_toEndOf="@id/romance_label"
-                app:layout_constraintTop_toBottomOf="@id/outwear" />
+                app:layout_constraintTop_toBottomOf="@id/horror_label" />
 
             <TextView
                 android:id="@+id/sol_label"
@@ -179,17 +241,17 @@
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 android:textColor="@color/purple_700"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/accessories" />
+                app:layout_constraintTop_toBottomOf="@id/romance_label" />
 
             <TextView
-                android:id="@+id/bags"
+                android:id="@+id/sol_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/sliceOfLife"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 app:layout_constraintStart_toEndOf="@id/sol_label"
-                app:layout_constraintTop_toBottomOf="@id/accessories" />
+                app:layout_constraintTop_toBottomOf="@id/romance_label" />
 
             <TextView
                 android:id="@+id/scifi_label"
@@ -200,17 +262,19 @@
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 android:textColor="@color/purple_700"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bags" />
+                app:layout_constraintTop_toBottomOf="@id/sol_label" />
 
             <TextView
-                android:id="@+id/footwear"
+                android:id="@+id/scifi_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/sci_fi"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 app:layout_constraintStart_toEndOf="@id/scifi_label"
-                app:layout_constraintTop_toBottomOf="@id/bags" />
+                app:layout_constraintTop_toBottomOf="@id/sol_label" />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
