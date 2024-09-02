@@ -91,22 +91,26 @@ public class RegistrationActivity extends AppCompatActivity {
         }
 
         // Verifica se l'username è già preso
-        if (userRepository.isUsernameTaken(username)) {
-            Toast.makeText(this, "Username already taken", Toast.LENGTH_SHORT).show();
-            return;
-        }
+        userRepository.isUsernameTaken(username, isTaken -> {
+            runOnUiThread(() -> {
+                if (isTaken) {
+                    Toast.makeText(this, "Username already taken", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Crea un nuovo oggetto User e lo registra nel database
+                    User newUser = new User(username, password);
+                    userRepository.registerUser(newUser);
 
-        // Crea un nuovo oggetto User e lo registra nel database
-        User newUser = new User(username, password);
-        userRepository.registerUser(newUser);
+                    Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show();
 
-        Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show();
+                    // Avvia la HomeActivity
+                    Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
+                    startActivity(intent);
 
-        // Avvia la HomeActivity
-        Intent intent = new Intent(RegistrationActivity.this, HomeFragment.class);
-        startActivity(intent);
-
-        // Chiudi l'activity di registrazione per prevenire il ritorno con il pulsante back
-        finish();
+                    // Chiudi l'activity di registrazione per prevenire il ritorno con il pulsante back
+                    finish();
+                }
+            });
+        });
     }
+
 }

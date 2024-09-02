@@ -19,15 +19,23 @@ public class UserRepository {
         });
     }
 
-    public User loginUser(String username, String password) {
-        return userDAO.login(username, password);
+    public void isUsernameTaken(String username, Callback<Boolean> callback) {
+        CardItemDatabase.databaseWriteExecutor.execute(() -> {
+            boolean result = userDAO.findByUsername(username) != null;
+            callback.onResult(result);
+        });
     }
 
-    public boolean isUsernameTaken(String username) {
-        return userDAO.findByUsername(username) != null;
+    public User loginUser(String username, String password) {
+        return userDAO.login(username, password);
     }
 
     public User getUserByUsername(String username) {
         return userDAO.getUserByUsername(username);
     }
+
+    public interface Callback<T> {
+        void onResult(T result);
+    }
 }
+

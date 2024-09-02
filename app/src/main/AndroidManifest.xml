@@ -40,6 +40,8 @@
 
         <activity android:name=".LoginActivity" />
 
+        <activity android:name=".HomeActivity" />
+
         <!-- Aggiungi la RegistrationActivity -->
         <activity android:name=".RegistrationActivity" />
 
