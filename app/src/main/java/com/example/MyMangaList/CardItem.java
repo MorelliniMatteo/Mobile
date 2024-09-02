@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 /**
  * Class which represents every card item with its information (image, place, data, price, description)
  */
-@Entity(tableName = "wardrobe")
+@Entity(tableName = "MyMangaList")
 public class CardItem {
 
     @PrimaryKey(autoGenerate = true)

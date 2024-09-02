@@ -22,7 +22,7 @@ public interface CardItemDAO {
 
     // @Transaction: anything inside the method runs in a single transaction.
     @Transaction
-    @Query("SELECT * FROM wardrobe ORDER BY item_id DESC")
+    @Query("SELECT * FROM MyMangaList ORDER BY item_id DESC")
     LiveData<List<CardItem>> getCardItems();
 
     @Delete
@@ -33,7 +33,7 @@ public interface CardItemDAO {
     void incrementCount(CardItem cardItem);
 
     @Transaction
-    @Query("SELECT SUM(item_price) FROM wardrobe")
+    @Query("SELECT SUM(item_price) FROM MyMangaList")
     LiveData<Float> get_total_price();
 
 }
