@@ -111,35 +111,29 @@ public class HomeFragment extends Fragment implements OnItemListener {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
+        // In inflaziona il menu
+        inflater.inflate(R.menu.top_app_barr, menu);
 
-        MenuItem item = menu.findItem(R.id.app_bar_search);
-        SearchView searchView = (SearchView) item.getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        // Gestisci solo gli elementi che esistono nel menu
+        MenuItem favoriteItem = menu.findItem(R.id.menu_favorite);
+        MenuItem filterItem = menu.findItem(R.id.menu_filter);
 
-            /**
-             * Called when the user submits the query. This could be due to a key press on the keyboard
-             * or due to pressing a submit button.
-             * @param query the query text that is to be submitted
-             * @return true if the query has been handled by the listener, false to let the
-             * SearchView perform the default action.
-             */
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            /**
-             * Called when the query text is changed by the user.
-             * @param newText the new content of the query text field.
-             * @return false if the SearchView should perform the default action of showing any
-             * suggestions if available, true if the action was handled by the listener.
-             */
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
-                return true;
-            }
-
-        });
+        // Se avevi un elemento di ricerca, gestisci qui (per esempio):
+        // MenuItem searchItem = menu.findItem(R.id.menu_search);
+        // if (searchItem != null) {
+        //     SearchView searchView = (SearchView) searchItem.getActionView();
+        //     searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        //         @Override
+        //         public boolean onQueryTextSubmit(String query) {
+        //             return false;
+        //         }
+        //         @Override
+        //         public boolean onQueryTextChange(String newText) {
+        //             adapter.getFilter().filter(newText);
+        //             return true;
+        //         }
+        //     });
+        // }
     }
+
 }
