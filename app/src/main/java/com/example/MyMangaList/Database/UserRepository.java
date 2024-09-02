@@ -26,9 +26,13 @@ public class UserRepository {
         });
     }
 
-    public User loginUser(String username, String password) {
-        return userDAO.login(username, password);
+    public void loginUser(String username, String password, Callback<User> callback) {
+        CardItemDatabase.databaseWriteExecutor.execute(() -> {
+            User user = userDAO.login(username, password);
+            callback.onResult(user);
+        });
     }
+
 
     public User getUserByUsername(String username) {
         return userDAO.getUserByUsername(username);
