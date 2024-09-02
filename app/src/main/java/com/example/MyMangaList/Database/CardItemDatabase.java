@@ -9,7 +9,7 @@ import com.example.MyMangaList.User;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {CardItem.class, User.class}, version = 7, exportSchema = false)
+@Database(entities = {CardItem.class, User.class}, version = 8, exportSchema = false)
 public abstract class CardItemDatabase extends RoomDatabase {
     public abstract CardItemDAO cardItemDAO();
     public abstract UserDAO userDAO();
