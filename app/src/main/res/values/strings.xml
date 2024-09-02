@@ -26,7 +26,7 @@
     <string name="total_price_text" >Money spent on manga:</string>
     <string name="total_price_label_txt" >price</string>
     <string name="value">€</string>
-    <string name="items_in" >Manga in your list</string>
+    <string name="items_in" >Manga in your list, divided per genres</string>
     <string name="action" >Action</string>
     <string name="comedy" >Comedy</string>
     <string name="horror" >Horror</string>

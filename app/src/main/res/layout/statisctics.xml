@@ -27,12 +27,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="108dp"
                 android:layout_margin="10dp"
-                android:background="@color/purple_500"
+                android:background="@color/gray"
                 android:contentDescription="@string/finances_txt"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_bar_chart_24" />
+                app:srcCompat="@drawable/ic_book" />
 
 
             <TextView
@@ -43,17 +43,20 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/total_price_text"
-                android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                android:textColor="@color/purple_500"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/finances_image"
-                tools:text="Totale you spent on your collection:" />
+                tools:text="Money spent in your manga collection:" />
+
 
             <TextView
                 android:id="@+id/total_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/total_price_label_txt"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
                 app:layout_constraintStart_toStartOf="parent"
@@ -77,20 +80,20 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/items_in"
-                android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                android:textColor="@color/purple_500"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/total_price" />
 
             <TextView
-                android:id="@+id/tops_label"
+                android:id="@+id/action_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Tops:"
+                android:text="Action:"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                android:textColor="@color/green_500"
+                android:textColor="@color/purple_700"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/string" />
 
@@ -101,17 +104,17 @@
                 android:layout_margin="10dp"
                 android:text="@string/action"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                app:layout_constraintStart_toEndOf="@id/tops_label"
+                app:layout_constraintStart_toEndOf="@id/action_label"
                 app:layout_constraintTop_toBottomOf="@id/string" />
 
             <TextView
-                android:id="@+id/bottoms_label"
+                android:id="@+id/comedy_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Bottoms:"
+                android:text="Comedy:"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                android:textColor="@color/green_500"
+                android:textColor="@color/purple_700"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tops" />
 
@@ -122,17 +125,17 @@
                 android:layout_margin="10dp"
                 android:text="@string/comedy"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                app:layout_constraintStart_toEndOf="@id/bottoms_label"
+                app:layout_constraintStart_toEndOf="@id/comedy_label"
                 app:layout_constraintTop_toBottomOf="@id/tops" />
 
             <TextView
-                android:id="@+id/outwear_label"
+                android:id="@+id/horror_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Outwear:"
+                android:text="Horror:"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                android:textColor="@color/green_500"
+                android:textColor="@color/purple_700"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/bottoms" />
 
@@ -143,17 +146,17 @@
                 android:layout_margin="10dp"
                 android:text="@string/horror"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                app:layout_constraintStart_toEndOf="@id/outwear_label"
+                app:layout_constraintStart_toEndOf="@id/horror_label"
                 app:layout_constraintTop_toBottomOf="@id/bottoms" />
 
             <TextView
-                android:id="@+id/accessories_label"
+                android:id="@+id/romance_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Accessories:"
+                android:text="Romance:"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                android:textColor="@color/green_500"
+                android:textColor="@color/purple_700"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/outwear" />
 
@@ -164,17 +167,17 @@
                 android:layout_margin="10dp"
                 android:text="@string/romance"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                app:layout_constraintStart_toEndOf="@id/accessories_label"
+                app:layout_constraintStart_toEndOf="@id/romance_label"
                 app:layout_constraintTop_toBottomOf="@id/outwear" />
 
             <TextView
-                android:id="@+id/bags_label"
+                android:id="@+id/sol_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Bags:"
+                android:text="Slice of life:"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                android:textColor="@color/green_500"
+                android:textColor="@color/purple_700"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/accessories" />
 
@@ -185,17 +188,17 @@
                 android:layout_margin="10dp"
                 android:text="@string/sliceOfLife"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                app:layout_constraintStart_toEndOf="@id/bags_label"
+                app:layout_constraintStart_toEndOf="@id/sol_label"
                 app:layout_constraintTop_toBottomOf="@id/accessories" />
 
             <TextView
-                android:id="@+id/footwear_label"
+                android:id="@+id/scifi_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Footwear:"
+                android:text="Sci-fi:"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                android:textColor="@color/green_500"
+                android:textColor="@color/purple_700"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/bags" />
 
@@ -206,7 +209,7 @@
                 android:layout_margin="10dp"
                 android:text="@string/sci_fi"
                 android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-                app:layout_constraintStart_toEndOf="@id/footwear_label"
+                app:layout_constraintStart_toEndOf="@id/scifi_label"
                 app:layout_constraintTop_toBottomOf="@id/bags" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

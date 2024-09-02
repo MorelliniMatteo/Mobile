@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="3dp"
         android:layout_marginHorizontal="10dp"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/purple_700"
         android:text="@string/all" />
 
     <Button
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="3dp"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/purple_700"
         android:text="@string/action" />
 
     <Button
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="3dp"
         android:layout_marginHorizontal="10dp"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/purple_700"
         android:text="@string/comedy" />
 
     <Button
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="3dp"
         android:layout_marginHorizontal="10dp"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/purple_700"
         android:text="@string/horror" />
 
     <Button
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="3dp"
         android:layout_marginHorizontal="10dp"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/purple_700"
         android:text="@string/romance" />
 
     <Button
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="3dp"
         android:layout_marginHorizontal="10dp"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/purple_700"
         android:text="@string/sliceOfLife" />
 
     <Button
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="3dp"
         android:layout_marginHorizontal="10dp"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/purple_700"
         android:text="@string/sci_fi" />
 
     <Button

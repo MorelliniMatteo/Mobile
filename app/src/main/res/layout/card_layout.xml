@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:text="@string/item_title"
-            android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
 
         <TextView
             android:id="@+id/price_textview"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:text="@string/price"
-            android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
+            android:textAppearance="@style/TextAppearance.Material3.LabelLarge" />
 
         <TextView
             android:id="@+id/date_textview"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:text="@string/date"
-            android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
+            android:textAppearance="@style/TextAppearance.Material3.LabelLarge" />
 
         <TextView
             android:id="@+id/wear_count_textview"
@@ -56,6 +56,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:text="@string/wear_count"
-            android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
+            android:textAppearance="@style/TextAppearance.Material3.LabelLarge" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </com.google.android.material.card.MaterialCardView>
