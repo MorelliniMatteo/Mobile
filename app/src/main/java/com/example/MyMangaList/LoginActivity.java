@@ -79,18 +79,25 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        userRepository.loginUser(username, password, user -> {
-            if (user != null) {
-                // Credenziali corrette, naviga verso la home
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                startActivity(intent);
-                finish(); // Chiude la LoginActivity in modo che non venga riaperta con il tasto back
-            } else {
-                // Credenziali errate, mostra un messaggio di errore
-                Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show();
-            }
+        userRepository.getUserByUsername(username, user -> {
+            runOnUiThread(() -> { // Assicurati che il Toast venga mostrato sul thread principale
+                if (user == null) {
+                    // L'utente non esiste
+                    Toast.makeText(this, "User does not exist", Toast.LENGTH_SHORT).show();
+                } else if (user.getPassword().equals(password)) {
+                    // Credenziali corrette, naviga verso la home
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish(); // Chiude la LoginActivity in modo che non venga riaperta con il tasto back
+                } else {
+                    // Password errata
+                    Toast.makeText(this, "Incorrect password", Toast.LENGTH_SHORT).show();
+                }
+            });
         });
     }
+
+
 
 
 }

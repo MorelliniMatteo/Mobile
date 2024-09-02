@@ -33,6 +33,17 @@ public class UserRepository {
         });
     }
 
+    public void getUserByUsername(String username, Callback<User> callback) {
+        CardItemDatabase.databaseWriteExecutor.execute(() -> {
+            User user = userDAO.getUserByUsername(username);
+            // Passa il risultato al callback
+            if (callback != null) {
+                callback.onResult(user);
+            }
+        });
+    }
+
+
 
     public User getUserByUsername(String username) {
         return userDAO.getUserByUsername(username);
