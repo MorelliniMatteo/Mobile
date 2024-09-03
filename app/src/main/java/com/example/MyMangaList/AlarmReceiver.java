@@ -29,7 +29,7 @@ public class AlarmReceiver extends BroadcastReceiver{
         Notification notification = builder.setContentTitle("Welcome in MyWardrobe!")
                 .setContentText("Start to organize your wardrobe.")
                 .setTicker("New Message Alert!")
-                .setSmallIcon(R.drawable.ic_baseline_checkroom_24)
+                .setSmallIcon(R.drawable.ic_registration_not)
                 .setContentIntent(pendingIntent).build();
 
 
