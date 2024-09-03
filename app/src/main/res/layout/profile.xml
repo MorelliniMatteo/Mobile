@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".SettingActivity"
     android:paddingStart="20dp"
-    android:paddingEnd="20dp">
+    android:paddingEnd="20dp"
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -22,11 +24,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.50" />
+                app:layout_constraintGuide_end="185dp" />
 
             <!-- My Profile Title -->
-
-            <!-- Profile Section -->
             <TextView
                 android:id="@+id/my_profile_title"
                 android:layout_width="wrap_content"
@@ -274,9 +274,14 @@
                 app:layout_constraintStart_toEndOf="@id/scifi_label"
                 app:layout_constraintTop_toBottomOf="@id/sol_label" />
 
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
+    <!-- Bottom Navigation View -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:menu="@menu/bot_app_bar" />
 </androidx.appcompat.widget.LinearLayoutCompat>

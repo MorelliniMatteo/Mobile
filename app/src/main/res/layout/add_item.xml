@@ -173,10 +173,10 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/price_edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:digits="0123456789." />
+            android:layout_width="363dp"
+            android:layout_height="37dp"
+            android:digits="0123456789."
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Button for Taking a Picture -->
@@ -210,18 +210,33 @@
         android:layout_marginEnd="16dp" />
 
     <!-- Image View for Displayed Picture -->
+
+    <!-- Bottom Navigation View -->
+
     <ImageView
         android:id="@+id/picture_displayed_imageview"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_width="361dp"
+        android:layout_height="120dp"
         android:layout_margin="10dp"
         android:background="@color/dark_blue"
         android:contentDescription="@string/image_captured"
         android:src="@drawable/ic_book"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/select_picture_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.052" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        app:menu="@menu/bot_app_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

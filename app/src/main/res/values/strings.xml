@@ -20,7 +20,7 @@
     <string name="plan_to_read" >Plan to read</string>
     <string name="price" >Price</string>
     <string name="category">Genres</string>
-    <string name="price_text">Price EUR€:</string>
+    <string name="price_text">Price €:</string>
     <string name="date_text" >Acquisition date: </string>
     <string name="location_text" >Store location: </string>
     <string name="select_a_picture" >Select picture</string>
