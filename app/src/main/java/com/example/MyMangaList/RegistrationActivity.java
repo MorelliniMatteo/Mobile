@@ -1,6 +1,10 @@
 package com.example.MyMangaList;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -15,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.example.MyMangaList.Database.UserRepository;
 
@@ -27,6 +33,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private TextView signInTextView;
 
     private UserRepository userRepository;
+
+    private static final String CHANNEL_ID = "registration_channel";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +50,9 @@ public class RegistrationActivity extends AppCompatActivity {
         signInTextView = findViewById(R.id.textViewSignIn);
 
         registerButton.setOnClickListener(v -> registerUser());
+
+        // Crea il canale di notifica
+        createNotificationChannel();
 
         // Testo completo con "sign-in" cliccabile
         String signInText = "Do you already have an account? sign-in";
@@ -102,6 +113,9 @@ public class RegistrationActivity extends AppCompatActivity {
 
                     Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show();
 
+                    // Invia una notifica di successo
+                    sendRegistrationSuccessNotification();
+
                     // Avvia la HomeActivity
                     Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
                     startActivity(intent);
@@ -113,4 +127,31 @@ public class RegistrationActivity extends AppCompatActivity {
         });
     }
 
+    private void createNotificationChannel() {
+        // Creazione del canale di notifica per Android 8.0 e versioni successive
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Registration Channel";
+            String description = "Channel for registration notifications";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+
+            // Registra il canale nel sistema
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+    private void sendRegistrationSuccessNotification() {
+        // Costruisce la notifica
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_registration_not) // L'icona della notifica
+                .setContentTitle("Registration Successful")
+                .setContentText("You have successfully registered to MyMangaList.")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        // Mostra la notifica
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        notificationManager.notify(1, builder.build());
+    }
 }
