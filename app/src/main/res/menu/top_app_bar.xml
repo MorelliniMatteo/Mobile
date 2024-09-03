@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/app_bar_search"
-        android:icon="@drawable/ic_search_white_24dp"
-        android:title="@string/search"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:showAsAction="ifRoom"
-        android:contentDescription="@string/search" />
-
+        android:id="@+id/menu_favorite"
+        android:icon="@drawable/ic_favorite"
+        android:title="Favorite" />
     <item
-        android:id="@+id/app_bar_finances"
-        android:icon="@drawable/ic_baseline_insert_chart_outlined_24"
-        android:title="@string/statistics"
-        app:showAsAction="ifRoom"
-        android:contentDescription="@string/statistics"/>
+        android:id="@+id/menu_title"
+        android:title="MyMangaList"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_filter"
+        android:icon="@drawable/ic_filter"
+        android:title="Filter" />
 </menu>

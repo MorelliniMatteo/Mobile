@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
@@ -112,7 +111,7 @@ public class HomeFragment extends Fragment implements OnItemListener {
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         // In inflaziona il menu
-        inflater.inflate(R.menu.top_app_barr, menu);
+        inflater.inflate(R.menu.top_app_bar, menu);
 
         // Gestisci solo gli elementi che esistono nel menu
         MenuItem favoriteItem = menu.findItem(R.id.menu_favorite);
