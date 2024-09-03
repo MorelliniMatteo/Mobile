@@ -78,7 +78,7 @@ public class CategoryFragment extends Fragment {
                 }
             });
 
-            view.findViewById(R.id.buttonAdd).setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.buttonAll).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Utilities.insertFragment((AppCompatActivity) activity, new AddFragment(),

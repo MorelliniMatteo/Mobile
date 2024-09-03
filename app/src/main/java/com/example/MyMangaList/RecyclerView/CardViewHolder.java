@@ -28,7 +28,7 @@ public class CardViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         itemTextView = itemView.findViewById(R.id.item_textview);
         dateTextView = itemView.findViewById(R.id.date_textview);
         priceTextView = itemView.findViewById(R.id.price_textview);
-        wear_count_textview = itemView.findViewById(R.id.wear_count_textview);
+        wear_count_textview = itemView.findViewById(R.id.wear_count_button);
         itemListener = listener;
 
         itemView.setOnClickListener(this);
