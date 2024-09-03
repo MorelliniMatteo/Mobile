@@ -5,13 +5,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Include the homepage layout -->
+    <include
+        layout="@layout/homepage"
+        android:id="@+id/homepage_layout"/>
+
+    <!-- RecyclerView for the list items -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginBottom="56dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/card_layout"/>
-
-    <include layout="@layout/homepage"/>
+        tools:listitem="@layout/card_layout" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
