@@ -73,6 +73,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import androidx.fragment.app.Fragment;
+
 public class AddFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
     private FusedLocationProviderClient fusedLocationProviderClient;

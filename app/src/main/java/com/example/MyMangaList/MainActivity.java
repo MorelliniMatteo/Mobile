@@ -9,13 +9,19 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.MyMangaList.ViewModel.AddViewModel;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -43,11 +49,45 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Configura il BottomNavigationView
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selectedFragment = null;
+
+                switch (item.getItemId()) {
+                    case R.id.menu_profile:
+                        Log.d("MainActivity", "ProfileFragment selected");
+                        selectedFragment = new ProfileFragment();
+                        break;
+                    case R.id.menu_add_manga:
+                        Log.d("MainActivity", "AddFragment selected");
+                        selectedFragment = new AddFragment();
+                        break;
+                    case R.id.menu_settings:
+                        Log.d("MainActivity", "SettingsFragment selected");
+                        selectedFragment = new SettingsFragment();
+                        break;
+                }
+
+                if (selectedFragment != null) {
+                    Log.d("MainActivity", "Loading fragment: " + selectedFragment.getClass().getSimpleName());
+                    loadFragment(selectedFragment);
+                    return true;
+                }
+
+                Log.d("MainActivity", "No fragment selected");
+                return false;
+            }
+        });
+
+
+        // Carica il fragment di default (ad esempio, HomeFragment)
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container_view, new HomeFragment())
-                    .commit();
+            bottomNavigationView.setSelectedItemId(R.id.menu_profile);
         }
+
         addViewModel = new ViewModelProvider(this).get(AddViewModel.class);
 
         // Imposta l'AlarmManager
@@ -70,6 +110,15 @@ public class MainActivity extends AppCompatActivity {
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
     }
 
+    private void loadFragment(Fragment fragment) {
+        Log.d("MainActivity", "Loading fragment: " + fragment.getClass().getSimpleName());
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container_view, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.top_app_bar, menu);
@@ -78,13 +127,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        super.onOptionsItemSelected(item);
-        if (item.getItemId() == R.id.app_bar_finances) {
-            Intent intent = new Intent(this, SettingActivity.class);
-            this.startActivity(intent);
-            return true;
+        switch (item.getItemId()) {
+            case R.id.menu_profile:
+                loadFragment(new ProfileFragment());
+                return true;
+            case R.id.menu_add_manga:
+                loadFragment(new AddFragment());
+                return true;
+            case R.id.menu_settings:
+                loadFragment(new SettingsFragment());
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return false;
     }
 
     @Override
