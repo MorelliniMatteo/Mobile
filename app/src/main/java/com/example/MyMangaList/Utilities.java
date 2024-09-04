@@ -43,8 +43,6 @@ public class Utilities {
             //create a toolbar that act as SupportActionBar
             Toolbar toolbar = new Toolbar(activity);
             activity.setSupportActionBar(toolbar);
-        } else {
-            activity.getSupportActionBar().setTitle(title);
         }
     }
 

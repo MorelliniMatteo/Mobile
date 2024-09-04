@@ -58,25 +58,25 @@ public class HomeFragment extends Fragment implements OnItemListener {
             setRecyclerView(activity);
 
             listViewModel = new ViewModelProvider(activity).get(ListViewModel.class);
-            listViewModel.getCardItems().observe(activity, new Observer<List<CardItem>>() {
-                @Override
-                public void onChanged(List<CardItem> cardItems) {
-                    adapter.setData(cardItems);
-                }
-            });
+            listViewModel.getCardItems().observe(activity, cardItems -> adapter.setData(cardItems));
 
-            FloatingActionButton floatingActionButton = view.findViewById(R.id.fab_add);
-            floatingActionButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new AddFragment(),
-                            AddFragment.class.getSimpleName());
-                }
+            // Rimuovi o commenta questo blocco di codice
+        /*
+        FloatingActionButton floatingActionButton = view.findViewById(R.id.fab_add);
+        if (floatingActionButton != null) {
+            floatingActionButton.setOnClickListener(view -> {
+                Utilities.insertFragment((AppCompatActivity) activity, new AddFragment(),
+                        AddFragment.class.getSimpleName());
             });
+        } else {
+            Log.e(LOG_TAG, "FloatingActionButton non trovato nel layout.");
+        }
+        */
         } else {
             Log.e(LOG_TAG, "Activity is null");
         }
     }
+
 
     /**
      * Method to set the RecyclerView and the relative adapter

@@ -43,9 +43,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (savedInstanceState == null)
-            Utilities.insertFragment(this, new CategoryFragment(), CategoryFragment.class.getSimpleName());
-
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container_view, new HomeFragment())
+                    .commit();
+        }
         addViewModel = new ViewModelProvider(this).get(AddViewModel.class);
 
         // Imposta l'AlarmManager

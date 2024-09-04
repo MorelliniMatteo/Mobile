@@ -5,7 +5,6 @@
         android:icon="@drawable/ic_profile"
         android:title="Profile"/>
 
-
     <item
         android:id="@+id/menu_add_manga"
         android:icon="@drawable/ic_add"
